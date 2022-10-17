@@ -1,0 +1,502 @@
+body{
+    background-color:white;
+    font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    
+    .nav{
+        display: flex;
+        background-color:  black ;
+    }
+    
+    .logo{
+        display: block;
+      max-width:230px;
+      max-height:95px;
+      width: auto;
+      height: auto;
+      padding-right: 20px;
+    }
+    .stl{
+        font-weight: 500;
+        width: 700px;
+        border: 1px solid black;
+        border-radius: 40px;
+        padding: 5px 20px 5px 20px;
+        display: flex;
+    }
+    .searchbar{
+        display:flex;
+        align-items: center;
+        max-width: 100%;
+    }
+    .iconsearch{
+        fill: transparent;
+    }
+    #btn3 {
+        
+        position: relative;
+        display: inline-block;
+        background-color: darkgray;
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.5s;
+        padding: 5px;
+        margin-top: 20px;
+        letter-spacing: 4px;
+        margin-left:10px;
+        
+        cursor: pointer;
+      }
+      
+      #btn3:hover {
+        background:darkgrey;
+        color: #fff;
+        
+        box-shadow: 0 0 5px yellow,
+                    0 0 25px yellow,
+                    0 0 50px yellow,
+                    0 0 100px yellow;
+                    
+      }
+      
+      #btn3 span {
+        position: absolute;
+        display: block;
+      }
+      
+      #btn3 span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, red);
+        animation: btn-anim1 1s linear infinite;
+       
+      }
+      
+      @keyframes btn-anim1 {
+        0% {
+          left: -100%;
+        }
+        50%,100% {
+          left: 100%;
+        }
+      }
+      
+      #btn3 span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #03e9f4);
+        animation: btn-anim2 1s linear infinite;
+        animation-delay: .25s;
+        
+      }
+      
+      @keyframes btn-anim2 {
+        0% {
+          top: -100%;
+        }
+        50%,100% {
+          top: 100%;
+        }
+      }
+      
+      #btn3 span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, red);
+        animation: btn-anim3 1s linear infinite;
+        animation-delay: .5s;
+       
+      }
+      
+      @keyframes btn-anim3 {
+        0% {
+          right: -100%;
+        }
+        50%,100% {
+          right: 100%;
+        }
+      }
+      
+      #btn3 span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #03e9f4);
+        animation: btn-anim4 1s linear infinite;
+        animation-delay: 0.75s;
+      }
+      
+      @keyframes btn-anim4 {
+        0% {
+          bottom: -100%;
+        }
+        50%,100% {
+          bottom: 100%;
+        }
+      }
+   
+    #menu{
+        width: 100%;
+        list-style: none;
+        margin-top: 0;
+        padding: 0;
+        margin-bottom: 0px;
+        justify-content: center;
+        display: flex;
+        background-color: black;
+        border-bottom: 3px whitesmoke solid; 
+    }
+    #menu li{
+        position: relative; 
+    }
+    
+    li a{
+        color: white;
+        display: block;
+        padding: 18px 20px;
+        text-decoration: none;
+    }
+    li a:hover{
+        color:black;
+    }
+    
+    
+    #menu ul.sub-menu{
+        position: absolute;
+        background-color: black;
+        padding: 15px 0px;
+        list-style: none;
+        display: none;
+        top: 55px;
+        left: -50px;
+        border: 2px solid white;
+        border-top: 0px;
+        z-index: 5;
+        width: 200px;
+        text-align: center;
+    }
+    #menu li:hover>ul.sub-menu{
+    display:block;
+    }
+    #menu ul.sub-menu a{
+        padding: 5px 30px;
+        display:block;
+    }
+    #menu ul.sub-menu a:hover{
+        padding:5px 30px; 
+    }
+    #menu>li>a:hover{
+        background-color: beige;
+    }
+    #menu ul.sub-menu li:last-child a {
+        border:none;
+    }
+    #menu ul.sub-menu ul.sub-menu{
+        border: 1px solid greenyellow;
+        top:-16px;
+        left: 98px;
+        
+    }
+    /* border cho hover menu */
+    #menu>li>a{
+        position: relative;
+    }
+    #menu>li>a::before{
+       content: "";
+       height: 4px;
+       width: 0px;
+       background: cyan;
+       position:absolute;
+       bottom: 0px;
+       left: 0px;
+        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    #menu>li:hover>a::before{
+    width: 100%;
+    }
+    #menu>li.has-child::after{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f107";
+        color:white;
+       position: absolute;
+        top:0px;
+        right: 0px;
+        padding: 20px 0px;
+       
+    }
+    #menu .sub-menu li:hover>a{
+        color: wheat;
+        
+    }
+    #menu .sub-menu li:hover{
+        transform: none;
+        border: 3px solid white;
+        border-left: 0px;
+        border-right: 0px;
+    }
+    #menu .sub-menu>li.has-child::after{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        content: "\f105";
+        color:white;
+        position: absolute;
+        top:0px;
+        right: 0px;
+        padding: 8px 3px;
+    }
+    #menu .sub-menu>li.has-child:hover::after{
+        color: red;
+    }
+    
+    .breadcrumb{
+        padding: 0px;
+        margin-bottom: 20px;
+        list-style: none;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+    }
+    *{
+        padding:0;
+        margin: 0;
+    }
+    #wrapper{
+        font-size: 14px;
+        max-width: 1170px;
+        margin:0 auto;
+    }
+    ul.product{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+    ul.product li{
+        flex-basis: 25%;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    ul.product li img{
+        max-width: 100%;
+        height: auto;
+        width: 300px;
+    }
+    ul.product li .product-top{
+        position: relative;
+        overflow: hidden;
+        z-index:2;
+    }
+    ul.product li .product-top .product-hinh{
+        display: block;
+    
+    }
+    ul.product li .product-top .product-hinh img{
+        display: block;
+       
+        }
+    
+    
+    
+    ul.product li .product-info{
+        padding:10px 0px;
+    }
+    ul.product li .product-info a{
+        display: block;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    ul.product li .product-info .product-name{
+        color: black;
+        padding: 3px 0px;
+    }
+    
+    ul.product li .product-info .product-price{
+        color:black;
+        padding: 3px 0px;
+    }
+
+.infoClothes .text-info{
+    width: 100%;
+    font-size: 15px;
+    text-align: left;
+    padding: 2px 0px;
+    display: block;
+}
+.infoClothes .text-info1{
+    width: 100%;
+    font-size: 20px;
+    text-align: left;
+    
+}
+.infoClothes .info-price{
+    font-size: 25px;
+    text-align: left;
+    padding: 5px 0px;
+}
+
+.infoClothes .imgclothes{
+    width: 70%;
+    padding-left: 15px;
+    justify-content: center;
+display: flex;
+}
+.infoClothes .large-clothes img{
+    height: 300px;
+    width: 300px;
+    display:flex;
+}    
+.infoClothes .small-imgclothes img{
+    height: 100px;
+    width: 100px;
+    display: flex;
+}
+
+.info-baohanh{
+    list-style-type: none;
+    border: 2px black solid;
+    padding:5px 2px;
+}
+.info-baohanh li{
+    padding:5px 3px;
+}
+.infoClothes .imgclothes ul{
+    padding-left: 40px;
+}
+.infoClothes .info-size{
+    padding-left:20px ;
+    padding-top: 35px;
+    list-style-type: none;
+    display: flex;
+}
+
+.infoClothes .info-size .size{
+    padding: 0px 30px;
+    display: flex;
+    
+}
+.infoClothes .info-size .size span{
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    padding: 5px;
+    min-width: 50px;
+    display: inline-block;
+    text-align: center;
+    background-color: #fff;
+cursor: pointer;
+}
+.infoClothes .info-size .size .spsize{
+    /* border: 2px solid blue; */
+    margin-left: 15px;
+    border-radius: 0px;
+    
+}
+
+.infoClothes .info-soluong input{
+border-radius: 0;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 6px 12px;
+font-size: 14px;
+line-height:1.42857143;
+height: 30px;
+width: 70px;
+}
+.input-group-addon, .input-group-btn{
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.input-group-addon{
+    display: table-cell;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.input-group-addon{
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.infoClothes .info-mua button{
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.32857143;
+    text-align: center;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    background-color: black;
+    color: azure;
+}
+.ending{
+    background-color: black;
+    color: white;
+    display:flex;
+    max-width: 100%;
+}
+
+
+.ending ul {
+    padding-top: 14px;
+        
+}
+.ending .chinhsach{
+    padding-top: 3px;
+    margin-left: 0px;
+}
+
+.ending .dieukhoan{
+    padding-left: 0px;
+}
+.ending .dieukhoan li{
+color: white;
+padding-left: 10px;
+}
+.ending ul li{
+    padding-left: 5px;
+}
+.cs,.ht,.dk,.cn{
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+.chungnhan{
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+
